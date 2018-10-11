@@ -40,7 +40,7 @@ import (
 )
 
 const (
-	defaultDialTimeout = 15 * time.Second
+	defaultDialTimeout = 10 * time.Second
 
 	// Connectivity defaults.
 	maxActiveDialTasks     = 16
