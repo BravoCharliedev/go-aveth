@@ -28,20 +28,20 @@ const (
 	SloadGas              uint64 = 50    // Multiplied by the number of 32-byte words that are copied (round up) for any *COPY operation and added.
 	CallValueTransferGas  uint64 = 9000  // Paid for CALL when the value transfer is non-zero.
 	CallNewAccountGas     uint64 = 25000 // Paid for CALL when the destination address didn't exist prior.
-	TxGas                 uint64 = 21000 // Per transaction not creating a contract. NOTE: Not payable on data of calls between transactions.
-	TxGasContractCreation uint64 = 53000 // Per transaction that creates a contract. NOTE: Not payable on data of calls between transactions.
-	TxDataZeroGas         uint64 = 4     // Per byte of data attached to a transaction that equals zero. NOTE: Not payable on data of calls between transactions.
+	TxGas                 uint64 = 21 // Per transaction not creating a contract. NOTE: Not payable on data of calls between transactions.
+	TxGasContractCreation uint64 = 53000000 // Per transaction that creates a contract. NOTE: Not payable on data of calls between transactions.
+	TxDataZeroGas         uint64 = 1     // Per byte of data attached to a transaction that equals zero. NOTE: Not payable on data of calls between transactions.
 	QuadCoeffDiv          uint64 = 512   // Divisor for the quadratic particle of the memory cost equation.
 	LogDataGas            uint64 = 8     // Per byte in a LOG* operation's data.
-	CallStipend           uint64 = 2300  // Free gas given at beginning of call.
+	CallStipend           uint64 = 23  // Free gas given at beginning of call.
 
 	Sha3Gas     uint64 = 30 // Once per SHA3 operation.
 	Sha3WordGas uint64 = 6  // Once per word of the SHA3 operation's data.
 
-	SstoreSetGas    uint64 = 20000 // Once per SLOAD operation.
-	SstoreResetGas  uint64 = 5000  // Once per SSTORE operation if the zeroness changes from zero.
-	SstoreClearGas  uint64 = 5000  // Once per SSTORE operation if the zeroness doesn't change.
-	SstoreRefundGas uint64 = 15000 // Once per SSTORE operation if the zeroness changes to zero.
+	SstoreSetGas    uint64 = 200000 // Once per SLOAD operation.
+	SstoreResetGas  uint64 = 50000  // Once per SSTORE operation if the zeroness changes from zero.
+	SstoreClearGas  uint64 = 50000  // Once per SSTORE operation if the zeroness doesn't change.
+	SstoreRefundGas uint64 = 150000 // Once per SSTORE operation if the zeroness changes to zero.
 
 	NetSstoreNoopGas  uint64 = 200   // Once per SSTORE operation if the value doesn't change.
 	NetSstoreInitGas  uint64 = 20000 // Once per SSTORE operation from clean zero.
@@ -67,7 +67,7 @@ const (
 	Create2Gas       uint64 = 32000 // Once per CREATE2 operation
 	SuicideRefundGas uint64 = 24000 // Refunded following a suicide operation.
 	MemoryGas        uint64 = 3     // Times the address of the (highest referenced byte in memory + 1). NOTE: referencing happens on read, write and in instructions such as RETURN and CALL.
-	TxDataNonZeroGas uint64 = 68    // Per byte of data attached to a transaction that is not equal to zero. NOTE: Not payable on data of calls between transactions.
+	TxDataNonZeroGas uint64 = 2    // Per byte of data attached to a transaction that is not equal to zero. NOTE: Not payable on data of calls between transactions.
 
 	MaxCodeSize = 24576 // Maximum bytecode to permit for a contract
 
